@@ -18,18 +18,18 @@
         
         <div>
         	<!-- your problem description goes here -->
-        	Swap the values stored in a & b using a third variable as a temporary storage. <br>
-			This example is from the <a href="https://github.com/elewa-academy/variables-and-types/tree/master/value-swap">Values & Types</a> repository.  
+        	See how JavaScript treats "var" and "let" variables differently during the creation phase. <br>
+			This example is from the <a href="https://github.com/elewa-academy/variables-and-types/tree/master/hoisting">Values & Types</a> repository.  
         </div>
         <script>
         	// define your challenge here 
 			var challenge = 
-				"let a = \'a\';\n" +
-				"let b = \'b\';\n" +
-				"let holder = undefined;\n" +
-				"holder = a;\n" +
-				"a = b;\n" +
-				"b = holder;"
+				"console.log(_let); // -> ReferenceError: _let is not defined\n" +
+				"console.log(_var); // logs: undefined\n" +
+				"let _let = \"lleett\";\n" +
+				"var _var = \"vvaarr\";\n" +
+				"console.log(_let); // logs: lleett\n" +
+				"console.log(_var); // logs: vvaarr"
         </script>
 
         <!-- what you see -->
