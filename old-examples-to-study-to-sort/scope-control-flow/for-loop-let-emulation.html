@@ -1,0 +1,64 @@
+
+
+<!doctype html>
+<html>
+    <head>
+        <title>Parsons Template</title>
+        <!-- Don't touch these things -->
+        <link href="../../utils/parsons.css" rel="stylesheet" />
+        <link href="../../utils/lib/prettify.css" rel="stylesheet" />
+
+        <script src="../../utils/lib/prettify.js"></script>
+        <script src="../../utils/include.js"></script>
+        <script>
+            window.onload = function() {
+                init(challenge);
+            }
+        </script>
+    </head>
+    <body>
+        
+        <div>
+        	<!-- your problem description goes here -->
+			Emulating the behavior of a For Loop with "let" using a While Loop and block scoping. <br> <a href="https://github.com/elewa-academy/scope-and-control-flow/tree/master/1-block-scope/let-vs-var" target="_blank">Step-through right here<a>.
+        </div>
+        <script>
+        	// define your challenge here 
+			var challenge = 
+				let result = '';
+
+				{ // block 1
+				  let stepper_1 = 0;
+				  { // block 2
+				    let stepper_2 = stepper_1;
+				    while (stepper_2 < 2) {
+				      result += stepper_2;
+				      stepper_2++;
+				    }; // while
+				  }; // block 2
+				}; // block 1
+
+				console.log(result);
+        </script>
+
+        <!-- what you see -->
+        <div id="sortableTrash" class="sortable-code"></div>
+        <div id="sortable" class="sortable-code">
+        </div>
+        <div style="clear:both;"></div>
+        <p>
+            <a href="#" id="newInstanceLink">New instance</a>
+            <a href="#" id="feedbackLink">Get feedback</a>
+        </p>
+        <a href="../../index.html">HOME</a>
+
+        <!-- why it works -->
+        <script src="../../utils/lib/jquery.min.js"></script>
+        <script src="../../utils/lib/jquery-ui.min.js"></script>
+        <script src="../../utils/lib/jquery.ui.touch-punch.min.js"></script>
+        <script src="../../utils/lib/underscore-min.js"></script>
+        <script src="../../utils/lib/lis.js"></script>
+        <script src="../../utils/parsons.js"></script>
+        <script src='../../utils/index.js'></script>
+    </body>
+</html>

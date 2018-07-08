@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Scope & Control Flow</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Parsons exercises to accompany Scope & Control Flow">
+    <meta name="author" content="ColevandersWands">
+
+    <!-- parsons scripts -->
+    <link href="../utils/parsons.css" rel="stylesheet" />
+    <link href="../utils/lib/prettify.css" rel="stylesheet" />
+
+    <script src="../utils/lib/prettify.js"></script>
+    <script src="../utils/include.js"></script>
+
+    <script src="../utils/lib/jquery.min.js"></script>
+    <script src="../utils/lib/jquery-ui.min.js"></script>
+    <script src="../utils/lib/jquery.ui.touch-punch.min.js"></script>
+    <script src="../utils/lib/underscore-min.js"></script>
+    <script src="../utils/lib/lis.js"></script>
+    <script src="../utils/parsons.js"></script>
+    <script src='../utils/gallery-index.js'></script>
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#intro">Intro</a>
+                </li>
+                <li>
+                    <a href="#let-vs-var">let vs. var</a>
+                </li>                
+                <li>
+                    <a href="#nesting-scopes">nesting scopes</a>
+                </li> 
+                <li>
+                    <a href="#if-elseif-else">if, else if, else</a>
+                </li> 
+                <li>
+                    <a href="#switch-case">switch/case</a>
+                </li> 
+                <li>
+                    <a href="#while-loop">while loop</a>
+                </li> 
+                <li>
+                    <a href="#do-while-loop">do while loop</a>
+                </li> 
+                <li>
+                    <a href="#for-loop-var">for loop w/ var</a>
+                </li> 
+                <li>
+                    <a href="#for-loop-let">for loop w/ let</a>
+                </li> 
+                <li>
+                    <a href="../index.html">home</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div id="intro" class="container-fluid">
+                parsons exercises for <a href="https://github.com/elewa-academy/scope-and-control-flow" target="_blank">Scope & Control Flow</a> from <a href="https://github.com/elewa-academy/js-fundamentals" target="_blank">JS-Fundamentals</a>
+                <br>
+                <br>
+                <br>    
+            </div>
+            <div id="let-vs-var" class="container-fluid">
+                <div>
+                    <!-- your problem description goes here -->         
+                    This example illustrates how let & var behave differently with block scoping.
+                        <br>
+                    You can study this example in more detail by following the guided step-through <a href="https://github.com/elewa-academy/scope-and-control-flow/tree/master/1-block-scope/let-vs-var" target="_blank">right here<a>.
+                        <br> 
+                    Or see the code on PythonTutor <a href="https://goo.gl/TMzZRs" target='_blank'>right here</a>. 
+                        <br>
+                </div>
+
+                <!-- what you see -->
+                <div id="shuffled-let-vs-var" class="sortable-code"></div>
+                <div id="sorted-let-vs-var" class="sortable-code"></div> 
+                <div style="clear:both;"></div>
+                <p>
+                    <a href="#" id="reshuffle-let-vs-var">Re-Shuffle</a>
+                    <a href="#" id="feedback-let-vs-var">Get feedback</a>
+                </p>
+                <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">menu</a>
+
+                <!-- configure this section's challenge -->
+                <script>
+                    <!-- define your challenge here -->
+                    config = {};
+
+                    config.shuffled_id = "shuffled-let-vs-var";
+                    config.sorted_id = "sorted-let-vs-var";
+                    config.reshuffle_id = "reshuffle-let-vs-var";
+                    config.feedback_id = "feedback-let-vs-var";
+                    config.challenge = 
+                            "let global_let = 'global let'; \n" +
+                            "console.log('leaving global scope'); \n" +
+                            "{ \n" +
+                            "    console.log('entering block scope'); \n" +
+                            "    var inner_var = 'global var'; \n" +
+                            "    let inner_let = 'inner let'; \n" +
+                            "    console.log('leaving block scope'); \n" +
+                            "}; \n" +
+                            "console.log('re-entering global scope'); \n" +
+                            "inner_var = 'modified globally'; \n" +
+                            "console.log('final state');"
+
+                    init_section(config);
+                </script>
+            </div>
+            <div id="nesting-scopes" class="container-fluid">
+                <div>
+                    <!-- your problem description goes here -->         
+                    dummy challenge
+                </div>
+
+                <!-- what you see -->
+                <div id="shuffled" class="sortable-code"></div>
+                <div id="sorted" class="sortable-code">
+                </div>
+                <div style="clear:both;"></div>
+                <p>
+                    <a href="#" id="reshuffle">Re-Shuffle</a>
+                    <a href="#" id="feedback">Get feedback</a>
+                </p>
+                <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">menu</a>
+
+                <!-- configure this section's challenge -->
+                <script>
+                    <!-- define your challenge here -->
+                    config = {};
+                    config.challenge = 
+                            'line 1 \n' +
+                            '  line 2, block 1\n' +
+                            'line 3 \n';
+                    config.shuffled_id = "shuffled";
+                    config.sorted_id = "sorted";
+                    config.reshuffle_id = "reshuffle";
+                    config.feedback_id = "feedback";
+                    init_section(config);
+                </script>
+            </div>
+            <div id="if-elseif-else" class="container-fluid">
+                <div>
+                    <!-- your problem description goes here -->         
+                    dummy challenge
+                </div>
+
+                <!-- what you see -->
+                <div id="shuffled" class="sortable-code"></div>
+                <div id="sorted" class="sortable-code">
+                </div>
+                <div style="clear:both;"></div>
+                <p>
+                    <a href="#" id="reshuffle">Re-Shuffle</a>
+                    <a href="#" id="feedback">Get feedback</a>
+                </p>
+                <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">menu</a>
+
+                <!-- configure this section's challenge -->
+                <script>
+                    <!-- define your challenge here -->
+                    config = {};
+                    config.challenge = 
+                            'line 1 \n' +
+                            '  line 2, block 1\n' +
+                            'line 3 \n';
+                    config.shuffled_id = "shuffled";
+                    config.sorted_id = "sorted";
+                    config.reshuffle_id = "reshuffle";
+                    config.feedback_id = "feedback";
+                    init_section(config);
+                </script>
+            </div>
+            <div id="switch-case" class="container-fluid">
+                <div>
+                    <!-- your problem description goes here -->         
+                    dummy challenge
+                </div>
+
+                <!-- what you see -->
+                <div id="shuffled" class="sortable-code"></div>
+                <div id="sorted" class="sortable-code">
+                </div>
+                <div style="clear:both;"></div>
+                <p>
+                    <a href="#" id="reshuffle">Re-Shuffle</a>
+                    <a href="#" id="feedback">Get feedback</a>
+                </p>
+                <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">menu</a>
+
+                <!-- configure this section's challenge -->
+                <script>
+                    <!-- define your challenge here -->
+                    config = {};
+                    config.challenge = 
+                            'line 1 \n' +
+                            '  line 2, block 1\n' +
+                            'line 3 \n';
+                    config.shuffled_id = "shuffled";
+                    config.sorted_id = "sorted";
+                    config.reshuffle_id = "reshuffle";
+                    config.feedback_id = "feedback";
+                    init_section(config);
+                </script>
+            </div>
+            <div id="while-loop" class="container-fluid">
+                <div>
+                    <!-- your problem description goes here -->         
+                    dummy challenge
+                </div>
+
+                <!-- what you see -->
+                <div id="shuffled" class="sortable-code"></div>
+                <div id="sorted" class="sortable-code">
+                </div>
+                <div style="clear:both;"></div>
+                <p>
+                    <a href="#" id="reshuffle">Re-Shuffle</a>
+                    <a href="#" id="feedback">Get feedback</a>
+                </p>
+                <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">menu</a>
+
+                <!-- configure this section's challenge -->
+                <script>
+                    <!-- define your challenge here -->
+                    config = {};
+                    config.challenge = 
+                            'line 1 \n' +
+                            '  line 2, block 1\n' +
+                            'line 3 \n';
+                    config.shuffled_id = "shuffled";
+                    config.sorted_id = "sorted";
+                    config.reshuffle_id = "reshuffle";
+                    config.feedback_id = "feedback";
+                    init_section(config);
+                </script>
+            </div>
+            <div id="do-while-loop" class="container-fluid">
+                <div>
+                    <!-- your problem description goes here -->         
+                    dummy challenge
+                </div>
+
+                <!-- what you see -->
+                <div id="shuffled" class="sortable-code"></div>
+                <div id="sorted" class="sortable-code">
+                </div>
+                <div style="clear:both;"></div>
+                <p>
+                    <a href="#" id="reshuffle">Re-Shuffle</a>
+                    <a href="#" id="feedback">Get feedback</a>
+                </p>
+                <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">menu</a>
+
+                <!-- configure this section's challenge -->
+                <script>
+                    <!-- define your challenge here -->
+                    config = {};
+                    config.challenge = 
+                            'line 1 \n' +
+                            '  line 2, block 1\n' +
+                            'line 3 \n';
+                    config.shuffled_id = "shuffled";
+                    config.sorted_id = "sorted";
+                    config.reshuffle_id = "reshuffle";
+                    config.feedback_id = "feedback";
+                    init_section(config);
+                </script>
+            </div>
+            <div id="for-loop-var" class="container-fluid">
+                <div>
+                    <!-- your problem description goes here -->         
+                    dummy challenge
+                </div>
+
+                <!-- what you see -->
+                <div id="shuffled" class="sortable-code"></div>
+                <div id="sorted" class="sortable-code">
+                </div>
+                <div style="clear:both;"></div>
+                <p>
+                    <a href="#" id="reshuffle">Re-Shuffle</a>
+                    <a href="#" id="feedback">Get feedback</a>
+                </p>
+                <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">menu</a>
+
+                <!-- configure this section's challenge -->
+                <script>
+                    <!-- define your challenge here -->
+                    config = {};
+                    config.challenge = 
+                            'line 1 \n' +
+                            '  line 2, block 1\n' +
+                            'line 3 \n';
+                    config.shuffled_id = "shuffled";
+                    config.sorted_id = "sorted";
+                    config.reshuffle_id = "reshuffle";
+                    config.feedback_id = "feedback";
+                    init_section(config);
+                </script>
+            </div>
+            <div id="for-loop-let" class="container-fluid">
+                <div>
+                    <!-- your problem description goes here -->         
+                    dummy challenge
+                </div>
+
+                <!-- what you see -->
+                <div id="shuffled" class="sortable-code"></div>
+                <div id="sorted" class="sortable-code">
+                </div>
+                <div style="clear:both;"></div>
+                <p>
+                    <a href="#" id="reshuffle">Re-Shuffle</a>
+                    <a href="#" id="feedback">Get feedback</a>
+                </p>
+                <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">menu</a>
+
+                <!-- configure this section's challenge -->
+                <script>
+                    <!-- define your challenge here -->
+                    config = {};
+                    config.challenge = 
+                            'line 1 \n' +
+                            '  line 2, block 1\n' +
+                            'line 3 \n';
+                    config.shuffled_id = "shuffled";
+                    config.sorted_id = "sorted";
+                    config.reshuffle_id = "reshuffle";
+                    config.feedback_id = "feedback";
+                    init_section(config);
+                </script>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+
+</body>
+
+</html>

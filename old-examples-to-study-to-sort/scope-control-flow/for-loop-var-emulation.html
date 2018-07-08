@@ -1,0 +1,70 @@
+let result = '';
+
+var stepper = 0;
+while (stepper < 2) {
+	result += stepper;
+	stepper++;
+};
+
+console.log(result);
+
+<!doctype html>
+<html>
+    <head>
+        <title>Parsons Template</title>
+        <!-- Don't touch these things -->
+        <link href="../../utils/parsons.css" rel="stylesheet" />
+        <link href="../../utils/lib/prettify.css" rel="stylesheet" />
+
+        <script src="../../utils/lib/prettify.js"></script>
+        <script src="../../utils/include.js"></script>
+        <script>
+            window.onload = function() {
+                init(challenge);
+            }
+        </script>
+    </head>
+    <body>
+        
+        <div>
+        	<!-- your problem description goes here -->
+			This example illustrates how let & var behave differently with block scoping. <br>
+            You can study this example in more detail by following the guided step-through <a href="https://github.com/elewa-academy/scope-and-control-flow/tree/master/1-block-scope/let-vs-var" target="_blank">right here<a>.
+        </div>
+        <script>
+        	// define your challenge here 
+			var challenge = 
+                "let global_let = 'global let'; \n" +
+                "console.log('leaving global scope'); \n" +
+                "{ \n" +
+                "    console.log('entering block scope'); \n" +
+                "    var inner_var = 'global var'; \n" +
+                "    let inner_let = 'inner let'; \n" +
+                "    console.log('leaving block scope'); \n" +
+                "}; \n" +
+                "console.log('re-entering global scope'); \n" +
+                "inner_var = 'modified globally'; \n" +
+                "console.log('final state');"
+        </script>
+
+        <!-- what you see -->
+        <div id="sortableTrash" class="sortable-code"></div>
+        <div id="sortable" class="sortable-code">
+        </div>
+        <div style="clear:both;"></div>
+        <p>
+            <a href="#" id="newInstanceLink">New instance</a>
+            <a href="#" id="feedbackLink">Get feedback</a>
+        </p>
+        <a href="../../index.html">HOME</a>
+
+        <!-- why it works -->
+        <script src="../../utils/lib/jquery.min.js"></script>
+        <script src="../../utils/lib/jquery-ui.min.js"></script>
+        <script src="../../utils/lib/jquery.ui.touch-punch.min.js"></script>
+        <script src="../../utils/lib/underscore-min.js"></script>
+        <script src="../../utils/lib/lis.js"></script>
+        <script src="../../utils/parsons.js"></script>
+        <script src='../../utils/index.js'></script>
+    </body>
+</html>
