@@ -63,13 +63,25 @@
                     <a href="#do-while-loop">do while loop</a>
                 </li> 
                 <li>
-                    <a href="#for-loop-var">for loop w/ var</a>
+                    <a href="#for-loop-var">for loop w/ "var"</a>
                 </li> 
                 <li>
-                    <a href="#for-loop-let">for loop w/ let</a>
+                    <a href="#sim-for-loop-var">simulated for w/ "var"</a>
                 </li> 
+                <li>
+                    <a href="#for-loop-let">for loop w/ "let"</a>
+                </li> 
+                <li>
+                    <a href="#sim-for-loop-let">simulated for w/ "let"</a>
+                </li> 
+                <br>
                 <li>
                     <a href="../index.html">home</a>
+                </li>
+                <li>
+                    <hr>
+                    <hr>
+                    <a href="http://elewa.education/blog" target="_blank"><img src="https://user-images.githubusercontent.com/18554853/34921062-506450ae-f97d-11e7-875f-6feeb26ad72d.png" width="100" height="40"/></a>
                 </li>
             </ul>
         </div>
@@ -78,19 +90,23 @@
         <!-- Page Content -->
         <div id="page-content-wrapper">
             <div id="intro" class="container-fluid">
+                <h1>Scope & Control Flow</h1>
                 parsons exercises for <a href="https://github.com/elewa-academy/scope-and-control-flow" target="_blank">Scope & Control Flow</a> from <a href="https://github.com/elewa-academy/js-fundamentals" target="_blank">JS-Fundamentals</a>
                 <br>
                 <br>
-                <br>    
+                <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">menu</a>
+                <br>
+                <br>  
+                <hr>  
             </div>
             <div id="let-vs-var" class="container-fluid">
                 <div>
+                    <h2>Let vs. Var</h2>
                     <!-- your problem description goes here -->         
                     This example illustrates how let & var behave differently with block scoping.
                         <br>
                     You can study this example in more detail by following the guided step-through <a href="https://github.com/elewa-academy/scope-and-control-flow/tree/master/1-block-scope/let-vs-var" target="_blank">right here<a>.
-                        <br> 
-                    Or see the code on PythonTutor <a href="https://goo.gl/TMzZRs" target='_blank'>right here</a>. 
+                        <br>
                         <br>
                 </div>
 
@@ -102,7 +118,8 @@
                     <a href="#" class="btn btn-secondary" id="reshuffle-let-vs-var">Re-Shuffle</a>
                     <a href="#" class="btn btn-secondary" id="feedback-let-vs-var">Get feedback</a>
                 </p>
-                <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">menu</a>
+                <br>
+                <hr>
 
                 <!-- configure this section's challenge -->
                 <script>
@@ -131,231 +148,426 @@
             </div>
             <div id="nesting-scopes" class="container-fluid">
                 <div>
+                    <h2>Nesting Scopes</h2>
                     <!-- your problem description goes here -->         
-                    dummy challenge
+                    This example illustrates how JavaScript implements "let" with nested block scopes.
+                        <br>
+                    You can study this example in more detail by following the guided step-through <a href="https://github.com/elewa-academy/scope-and-control-flow/tree/master/1-block-scope/nesting-scopes" target="_blank">right here<a>.
+                        <br>
+                        <br>
                 </div>
 
                 <!-- what you see -->
-                <div id="shuffled" class="sortable-code"></div>
-                <div id="sorted" class="sortable-code">
-                </div>
+                <div id="shuffled-nesting-scopes" class="sortable-code"></div>
+                <div id="sorted-nesting-scopes" class="sortable-code"></div> 
                 <div style="clear:both;"></div>
                 <p>
-                    <a href="#" class="btn btn-secondary" id="reshuffle">Re-Shuffle</a>
-                    <a href="#" class="btn btn-secondary" id="feedback">Get feedback</a>
+                    <a href="#" class="btn btn-secondary" id="reshuffle-nesting-scopes">Re-Shuffle</a>
+                    <a href="#" class="btn btn-secondary" id="feedback-nesting-scopes">Get feedback</a>
                 </p>
-                <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">menu</a>
+                <br>
+                <hr>
 
                 <!-- configure this section's challenge -->
                 <script>
                     <!-- define your challenge here -->
                     config = {};
+
+                    config.shuffled_id = "shuffled-nesting-scopes";
+                    config.sorted_id = "sorted-nesting-scopes";
+                    config.reshuffle_id = "reshuffle-nesting-scopes";
+                    config.feedback_id = "feedback-nesting-scopes";
                     config.challenge = 
-                            'line 1 \n' +
-                            '  line 2, block 1\n' +
-                            'line 3 \n';
-                    config.shuffled_id = "shuffled";
-                    config.sorted_id = "sorted";
-                    config.reshuffle_id = "reshuffle";
-                    config.feedback_id = "feedback";
+                        "let block_0 = [\'b0\']; \n" +
+                        "console.log(\'preparing block 1\'); \n" +
+                        "{ \n" +
+                        "  let block_1 = []; \n" +
+                        "  block_0.push('\b1\'), block_1.push(\'b1\'); \n" +
+                        "  console.log('preparing block 2'); \n" +
+                        "  { \n" +
+                        "    let block_2 = []; \n" +
+                        "    block_0.push(\'b2\'), block_1.push(\'b2\'), block_2.push(\'b\'); \n" +
+                        "    console.log(\'clearing block 2\'), block_0.pop(), block_1.pop(); \n" +
+                        "  }; \n" +
+                        "  console.log(\'clearing block 1\'), block_0.pop(); \n" +
+                        "}; \n" +
+                        "console.log(\'final state\'); \n";
                     init_section(config);
                 </script>
             </div>
             <div id="if-elseif-else" class="container-fluid">
                 <div>
+                    <h2>If, Else If, Else</h2>
                     <!-- your problem description goes here -->         
-                    dummy challenge
+                    A basic conditional statement.
+                        <br>
+                    You can study this example in more detail by following the guided step-through <a href="https://github.com/elewa-academy/scope-and-control-flow/tree/master/2-conditionals/if-elseif-else" target="_blank">right here<a>.
+                        <br>
+                        <br>
                 </div>
 
                 <!-- what you see -->
-                <div id="shuffled" class="sortable-code"></div>
-                <div id="sorted" class="sortable-code">
-                </div>
+                <div id="shuffled-if-elseif-else" class="sortable-code"></div>
+                <div id="sorted-if-elseif-else" class="sortable-code"></div> 
                 <div style="clear:both;"></div>
                 <p>
-                    <a href="#" id="reshuffle">Re-Shuffle</a>
-                    <a href="#" id="feedback">Get feedback</a>
+                    <a href="#" class="btn btn-secondary" id="reshuffle-if-elseif-else">Re-Shuffle</a>
+                    <a href="#" class="btn btn-secondary" id="feedback-if-elseif-else">Get feedback</a>
                 </p>
-                <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">menu</a>
+                <br>
+                <hr>
 
                 <!-- configure this section's challenge -->
                 <script>
                     <!-- define your challenge here -->
                     config = {};
+
+                    config.shuffled_id = "shuffled-if-elseif-else";
+                    config.sorted_id = "sorted-if-elseif-else";
+                    config.reshuffle_id = "reshuffle-if-elseif-else";
+                    config.feedback_id = "feedback-if-elseif-else";
                     config.challenge = 
-                            'line 1 \n' +
-                            '  line 2, block 1\n' +
-                            'line 3 \n';
-                    config.shuffled_id = "shuffled";
-                    config.sorted_id = "sorted";
-                    config.reshuffle_id = "reshuffle";
-                    config.feedback_id = "feedback";
+                        "let result = ''; \n" +
+                        "let condition; \n" +
+
+                        "if (condition == true) { \n" +
+                        "    result = 'condition is true'; \n" +
+                        "} else if (condition == false) { \n" +
+                        "    result = 'condition is false'; \n" +
+                        "} else { \n" +
+                        "    result = 'condition is not boolean'; \n" +
+                        "}; \n" +
+
+                        "console.log(result) ";
                     init_section(config);
                 </script>
             </div>
             <div id="switch-case" class="container-fluid">
-                <div>
+               <div>
+                    <h2>Switch/Case</h2>
                     <!-- your problem description goes here -->         
-                    dummy challenge
+                    The switch/case structure. Sort of a trickier and more risky version of if/else.
+                        <br>
+                    You can study this example in more detail by following the guided step-through <a href="https://github.com/elewa-academy/scope-and-control-flow/tree/master/2-conditionals/switch-case" target="_blank">right here<a>.
+                        <br>
+                        <br>
                 </div>
 
                 <!-- what you see -->
-                <div id="shuffled" class="sortable-code"></div>
-                <div id="sorted" class="sortable-code">
-                </div>
+                <div id="shuffled-switch-case" class="sortable-code"></div>
+                <div id="sorted-switch-case" class="sortable-code"></div> 
                 <div style="clear:both;"></div>
                 <p>
-                    <a href="#" id="reshuffle">Re-Shuffle</a>
-                    <a href="#" id="feedback">Get feedback</a>
+                    <a href="#" class="btn btn-secondary" id="reshuffle-switch-case">Re-Shuffle</a>
+                    <a href="#" class="btn btn-secondary" id="feedback-switch-case">Get feedback</a>
                 </p>
-                <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">menu</a>
+                <br>
+                <hr>
 
                 <!-- configure this section's challenge -->
                 <script>
                     <!-- define your challenge here -->
                     config = {};
+
+                    config.shuffled_id = "shuffled-switch-case";
+                    config.sorted_id = "sorted-switch-case";
+                    config.reshuffle_id = "reshuffle-switch-case";
+                    config.feedback_id = "feedback-switch-case";
                     config.challenge = 
-                            'line 1 \n' +
-                            '  line 2, block 1\n' +
-                            'line 3 \n';
-                    config.shuffled_id = "shuffled";
-                    config.sorted_id = "sorted";
-                    config.reshuffle_id = "reshuffle";
-                    config.feedback_id = "feedback";
+                        "let result = \'\'; \n" +
+                        "let condition; \n" +
+
+                        "switch (condition) { \n" +
+                        "  case true: \n" +
+                        "    result = \'condition is true\'; \n" +
+                        "    break; // true \n" +
+                        "  case false: \n" +
+                        "    result = \'condition is false\'; \n" +
+                        "    break; // false \n" +
+                        "  default: \n" +
+                        "    result = \'condition is not boolean\'; \n" +
+                        "}; \n" +
+
+                        "console.log(result);";
                     init_section(config);
                 </script>
             </div>
             <div id="while-loop" class="container-fluid">
                 <div>
+                    <h2>While Loop</h2>
                     <!-- your problem description goes here -->         
-                    dummy challenge
+                    A basic while loop.
+                        <br>
+                    You can study this example in more detail by following the guided step-through <a href="https://github.com/elewa-academy/scope-and-control-flow/tree/master/3-loops/1-while-loops" target="_blank">right here<a>.
+                        <br>
+                        <br>
                 </div>
 
                 <!-- what you see -->
-                <div id="shuffled" class="sortable-code"></div>
-                <div id="sorted" class="sortable-code">
-                </div>
+                <div id="shuffled-while-loop" class="sortable-code"></div>
+                <div id="sorted-while-loop" class="sortable-code"></div> 
                 <div style="clear:both;"></div>
                 <p>
-                    <a href="#" id="reshuffle">Re-Shuffle</a>
-                    <a href="#" id="feedback">Get feedback</a>
+                    <a href="#" class="btn btn-secondary" id="reshuffle-while-loop">Re-Shuffle</a>
+                    <a href="#" class="btn btn-secondary" id="feedback-while-loop">Get feedback</a>
                 </p>
-                <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">menu</a>
+                <br>
+                <hr>
 
                 <!-- configure this section's challenge -->
                 <script>
                     <!-- define your challenge here -->
                     config = {};
+
+                    config.shuffled_id = "shuffled-while-loop";
+                    config.sorted_id = "sorted-while-loop";
+                    config.reshuffle_id = "reshuffle-while-loop";
+                    config.feedback_id = "feedback-while-loop";
                     config.challenge = 
-                            'line 1 \n' +
-                            '  line 2, block 1\n' +
-                            'line 3 \n';
-                    config.shuffled_id = "shuffled";
-                    config.sorted_id = "sorted";
-                    config.reshuffle_id = "reshuffle";
-                    config.feedback_id = "feedback";
+                        "let result = \'\'; \n" +
+
+                        "let stepper = 0; \n" +
+                        "while (stepper < 2) { \n" +
+                        "  result += stepper; \n" +
+                        "  stepper++; \n" +
+                        "}; \n" +
+
+                        "console.log(result);";
                     init_section(config);
                 </script>
             </div>
             <div id="do-while-loop" class="container-fluid">
-                <div>
+               <div>
+                    <h2>Do While Loop</h2>
                     <!-- your problem description goes here -->         
-                    dummy challenge
+                    A basic do while loop.
+                        <br>
+                    You can study this example in more detail by following the guided step-through <a href="https://github.com/elewa-academy/scope-and-control-flow/tree/master/3-loops/2-do-while" target="_blank">right here<a>.
+                        <br>
+                        <br>
                 </div>
 
                 <!-- what you see -->
-                <div id="shuffled" class="sortable-code"></div>
-                <div id="sorted" class="sortable-code">
-                </div>
+                <div id="shuffled-do-while-loop" class="sortable-code"></div>
+                <div id="sorted-do-while-loop" class="sortable-code"></div> 
                 <div style="clear:both;"></div>
                 <p>
-                    <a href="#" id="reshuffle">Re-Shuffle</a>
-                    <a href="#" id="feedback">Get feedback</a>
+                    <a href="#" class="btn btn-secondary" id="reshuffle-do-while-loop">Re-Shuffle</a>
+                    <a href="#" class="btn btn-secondary" id="feedback-do-while-loop">Get feedback</a>
                 </p>
-                <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">menu</a>
+                <br>
+                <hr>
 
                 <!-- configure this section's challenge -->
                 <script>
                     <!-- define your challenge here -->
                     config = {};
+
+                    config.shuffled_id = "shuffled-do-while-loop";
+                    config.sorted_id = "sorted-do-while-loop";
+                    config.reshuffle_id = "reshuffle-do-while-loop";
+                    config.feedback_id = "feedback-do-while-loop";
                     config.challenge = 
-                            'line 1 \n' +
-                            '  line 2, block 1\n' +
-                            'line 3 \n';
-                    config.shuffled_id = "shuffled";
-                    config.sorted_id = "sorted";
-                    config.reshuffle_id = "reshuffle";
-                    config.feedback_id = "feedback";
+                        "let result = \'\'; \n" +
+
+                        "let stepper = 0; \n" +
+                        "do { \n" +
+                        "  result += stepper; \n" +
+                        "  stepper++; \n" +
+                        "} while (stepper < 2); \n" +
+
+                        "console.log(result);";
                     init_section(config);
                 </script>
             </div>
             <div id="for-loop-var" class="container-fluid">
-                <div>
+               <div>
+                    <h2>For Loop with "var"</h2>
                     <!-- your problem description goes here -->         
-                    dummy challenge
+                    A basic for loop with the stepper declared using "var".
+                        <br>
+                    You can study this example in more detail by following the guided step-through <a href="https://github.com/elewa-academy/scope-and-control-flow/tree/master/3-loops/3-for-loops/for-loop-var" target="_blank">right here<a>.
+                        <br>
+                        <br>
                 </div>
 
                 <!-- what you see -->
-                <div id="shuffled" class="sortable-code"></div>
-                <div id="sorted" class="sortable-code">
-                </div>
+                <div id="shuffled-for-loop-var" class="sortable-code"></div>
+                <div id="sorted-for-loop-var" class="sortable-code"></div> 
                 <div style="clear:both;"></div>
                 <p>
-                    <a href="#" id="reshuffle">Re-Shuffle</a>
-                    <a href="#" id="feedback">Get feedback</a>
+                    <a href="#" class="btn btn-secondary" id="reshuffle-for-loop-var">Re-Shuffle</a>
+                    <a href="#" class="btn btn-secondary" id="feedback-for-loop-var">Get feedback</a>
                 </p>
-                <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">menu</a>
+                <br>
+                <hr>
 
                 <!-- configure this section's challenge -->
                 <script>
                     <!-- define your challenge here -->
                     config = {};
+
+                    config.shuffled_id = "shuffled-for-loop-var";
+                    config.sorted_id = "sorted-for-loop-var";
+                    config.reshuffle_id = "reshuffle-for-loop-var";
+                    config.feedback_id = "feedback-for-loop-var";
                     config.challenge = 
-                            'line 1 \n' +
-                            '  line 2, block 1\n' +
-                            'line 3 \n';
-                    config.shuffled_id = "shuffled";
-                    config.sorted_id = "sorted";
-                    config.reshuffle_id = "reshuffle";
-                    config.feedback_id = "feedback";
+                        "let result = \'\'; \n" +
+
+                        "for (var stepper = 0; stepper <2; stepper++) { \n" +
+                        "    result += stepper; \n" +
+                        "}; \n" +
+
+                        "console.log(result);";
+                    init_section(config);
+                </script>
+            </div>
+            <div id="sim-for-loop-var" class="container-fluid">
+               <div>
+                    <h2>Simulated For Loop with "var"</h2>
+                    <!-- your problem description goes here -->         
+                    The execution behavior of a for loop with "var", simulated using a while loop.
+                        <br>
+                    You can study this example in more detail by following the guided step-through <a href="https://github.com/elewa-academy/scope-and-control-flow/tree/master/3-loops/3-for-loops/for-loop-var" target="_blank">right here<a>.
+                        <br>
+                        <br>
+                </div>
+
+                <!-- what you see -->
+                <div id="shuffled-sim-for-loop-var" class="sortable-code"></div>
+                <div id="sorted-sim-for-loop-var" class="sortable-code"></div> 
+                <div style="clear:both;"></div>
+                <p>
+                    <a href="#" class="btn btn-secondary" id="reshuffle-sim-for-loop-var">Re-Shuffle</a>
+                    <a href="#" class="btn btn-secondary" id="feedback-sim-for-loop-var">Get feedback</a>
+                </p>
+                <br>
+                <hr>
+
+                <!-- configure this section's challenge -->
+                <script>
+                    <!-- define your challenge here -->
+                    config = {};
+
+                    config.shuffled_id = "shuffled-sim-for-loop-var";
+                    config.sorted_id = "sorted-sim-for-loop-var";
+                    config.reshuffle_id = "reshuffle-sim-for-loop-var";
+                    config.feedback_id = "feedback-sim-for-loop-var";
+                    config.challenge = 
+                        "let result = \'\'; \n" +
+
+                        "let stepper = 0; \n" +
+                        "while (stepper < 2) { \n" +
+                        "  result += stepper; \n" +
+                        "  stepper++; \n" +
+                        "}; \n" +
+
+                        "console.log(result);";
                     init_section(config);
                 </script>
             </div>
             <div id="for-loop-let" class="container-fluid">
-                <div>
+               <div>
+                    <h2>For Loop with "let"</h2>
                     <!-- your problem description goes here -->         
-                    dummy challenge
+                    A basic for loop with the stepper declared using "let".
+                        <br>
+                    You can study this example in more detail by following the guided step-through <a href="https://github.com/elewa-academy/scope-and-control-flow/tree/master/3-loops/3-for-loops/for-loop-let" target="_blank">right here<a>.
+                        <br>
+                        <br>
                 </div>
 
                 <!-- what you see -->
-                <div id="shuffled" class="sortable-code"></div>
-                <div id="sorted" class="sortable-code">
-                </div>
+                <div id="shuffled-for-loop-let" class="sortable-code"></div>
+                <div id="sorted-for-loop-let" class="sortable-code"></div> 
                 <div style="clear:both;"></div>
                 <p>
-                    <a href="#" id="reshuffle">Re-Shuffle</a>
-                    <a href="#" id="feedback">Get feedback</a>
+                    <a href="#" class="btn btn-secondary" id="reshuffle-for-loop-let">Re-Shuffle</a>
+                    <a href="#" class="btn btn-secondary" id="feedback-for-loop-let">Get feedback</a>
                 </p>
-                <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">menu</a>
+                <br>
+                <hr>
 
                 <!-- configure this section's challenge -->
                 <script>
                     <!-- define your challenge here -->
                     config = {};
+
+                    config.shuffled_id = "shuffled-for-loop-let";
+                    config.sorted_id = "sorted-for-loop-let";
+                    config.reshuffle_id = "reshuffle-for-loop-let";
+                    config.feedback_id = "feedback-for-loop-let";
                     config.challenge = 
-                            'line 1 \n' +
-                            '  line 2, block 1\n' +
-                            'line 3 \n';
-                    config.shuffled_id = "shuffled";
-                    config.sorted_id = "sorted";
-                    config.reshuffle_id = "reshuffle";
-                    config.feedback_id = "feedback";
+                        "let result = \'\'; \n" +
+
+                        "for (let stepper = 0; stepper <2; stepper++) { \n" +
+                        "    result += stepper; \n" +
+                        "}; \n" +
+
+                        "console.log(result);";
+                    init_section(config);
+                </script>
+            </div>
+            <div id="sim-for-loop-let" class="container-fluid">
+               <div>
+                    <h2>Simulated For Loop with "let"</h2>
+                    <!-- your problem description goes here -->         
+                    The execution behavior of a for loop with "let", simulated using a while loop.
+                        <br>
+                    You can study this example in more detail by following the guided step-through <a href="https://github.com/elewa-academy/scope-and-control-flow/tree/master/3-loops/3-for-loops/for-loop-let" target="_blank">right here<a>.
+                        <br>
+                        <br>
+                </div>
+
+                <!-- what you see -->
+                <div id="shuffled-sim-for-loop-let" class="sortable-code"></div>
+                <div id="sorted-sim-for-loop-let" class="sortable-code"></div> 
+                <div style="clear:both;"></div>
+                <p>
+                    <a href="#" class="btn btn-secondary" id="reshuffle-sim-for-loop-let">Re-Shuffle</a>
+                    <a href="#" class="btn btn-secondary" id="feedback-sim-for-loop-let">Get feedback</a>
+                </p>
+                <br>
+                <hr>
+
+                <!-- configure this section's challenge -->
+                <script>
+                    <!-- define your challenge here -->
+                    config = {};
+
+                    config.shuffled_id = "shuffled-sim-for-loop-let";
+                    config.sorted_id = "sorted-sim-for-loop-let";
+                    config.reshuffle_id = "reshuffle-sim-for-loop-let";
+                    config.feedback_id = "feedback-sim-for-loop-let";
+                    config.challenge = 
+                        "let result = \'\'; \n" +
+
+                        "{ // block 1 \n" +
+                        "  let stepper_1 = 0; \n" +
+                        "  { // block 2 \n" +
+                        "    let stepper_2 = stepper_1; \n" +
+                        "    while (stepper_2 < 2) { \n" +
+                        "      result += stepper_2; \n" +
+                        "      stepper_2++; \n" +
+                        "    }; // while \n" +
+                        "  }; // block 2 \n" +
+                        "}; // block 1 \n" +
+
+                        "console.log(result);";
                     init_section(config);
                 </script>
             </div>
         </div>
         <!-- /#page-content-wrapper -->
 
+    </div>
+
+    <div>
+        <hr>
+        <hr>
+        <a href="http://elewa.education/blog" target="_blank"><img src="https://user-images.githubusercontent.com/18554853/34921062-506450ae-f97d-11e7-875f-6feeb26ad72d.png" width="150" height="60"/></a>
+        <br>
+        <br>
     </div>
     <!-- /#wrapper -->
 
