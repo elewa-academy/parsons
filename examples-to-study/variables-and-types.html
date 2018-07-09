@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Scope & Control Flow</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Parsons exercises to accompany Scope & Control Flow">
+    <meta name="author" content="ColevandersWands">
+
+    <!-- parsons scripts -->
+    <link href="../utils/parsons.css" rel="stylesheet" />
+    <link href="../utils/lib/prettify.css" rel="stylesheet" />
+
+    <script src="../utils/lib/prettify.js"></script>
+    <script src="../utils/include.js"></script>
+
+    <script src="../utils/lib/jquery.min.js"></script>
+    <script src="../utils/lib/jquery-ui.min.js"></script>
+    <script src="../utils/lib/jquery.ui.touch-punch.min.js"></script>
+    <script src="../utils/lib/underscore-min.js"></script>
+    <script src="../utils/lib/lis.js"></script>
+    <script src="../utils/parsons.js"></script>
+    <script src='../utils/gallery-index.js'></script>
+
+    <script src="../utils/lib/skulpt.js"></script>
+    <script src="../utils/lib/skulpt-stdlib.js"></script>
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#intro">variables & types</a>
+                </li>
+                <li>
+                    <a href="#value-swap-logic">value swap: logic</a>
+                </li>
+                <li>
+                    <a href="#value-swap-js">value swap: js</a>
+                </li>
+                <li>
+                    <a href="#hoisting">hoisting</a>
+                </li>                
+                <li>
+                    <a href="../index.html">home</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div id="intro" class="container-fluid">
+                <h1>Variables & Types</h1>
+                parsons exercises for <a href="https://github.com/elewa-academy/variables-and-types" target="_blank">Variables & Types</a> from <a href="https://github.com/elewa-academy/js-fundamentals" target="_blank">JS-Fundamentals</a>
+                <br>
+                There are fewer exercises here than in other chapters since most of the action happens in memory (ie. sketches and python tutor).  
+                <br>
+                <br>
+                <br>
+                <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">menu</a>
+                <br>    
+                <hr>
+            </div>
+            <div id="value-swap-logic" class="container-fluid">
+                <script>
+                  // This exercise is pulled directly from the examples in js-parson's GitHub repo
+                </script>
+                <h2>Value Swap: Logic</h2>
+                <p>Construct a program that swaps the values of variables <code>x</code> and <code>y</code> using the
+                  helper variable <code>tmp</code>. You can change the names of the variables (<span class="jsparson-toggle"></span>)
+                  by clicking them.</p>
+                <div id="sortableTrash" class="sortable-code"><p>Trash</p></div>
+                <div id="sortable" class="sortable-code"><p>Solution</p></div>
+                <div style="clear:both;"></div>
+                <p>
+                  <a href="#" class="btn btn-secondary" id="newInstanceLink">New instance</a>
+                  <a href="#" class="btn btn-secondary" id="feedbackLink">Get feedback</a>
+                </p>
+                <div id="unittest"></div>
+                <script>
+                  var initial = "$$toggle::x::y::tmp$$ = " +
+                                "$$toggle::x::y::tmp$$\n" +
+                                "$$toggle::x::y::tmp$$ = " +
+                                "$$toggle::x::y::tmp$$\n" +
+                                "$$toggle::x::y::tmp$$ = " +
+                                "$$toggle::x::y::tmp$$\n";
+                  $(document).ready(function(){
+                    var parson = new ParsonsWidget({
+                      'sortableId': 'sortable',
+                      'trashId': 'sortableTrash',
+                      'vartests': [{initcode: "x = 0\ny=2", code: "", message: "Testing with initial variable values x = 0 and y = 2", variables: {x: 2}},
+                                   {initcode: "x = 3\ny=4\n", code: "", message: "Testing with initial variable values x = 3 and y = 4", variables: {x: 4, y: 3}}],
+                      lang: "en"
+                    });
+                    parson.init(initial);
+                    parson.shuffleLines();
+                    $("#newInstanceLink").click(function(event){
+                      event.preventDefault();
+                      parson.shuffleLines();
+                    });
+                    $("#feedbackLink").click(function(event){
+                      event.preventDefault();
+                      var fb = parson.getFeedback();
+                      $("#unittest").html("<h2>Feedback from testing your program:</h2>" + fb.feedback);
+                      if (fb.success) { alert("Good, you solved the assignment!"); }
+                    });
+                  });
+                </script>
+                <hr>
+            </div>
+            <div id="value-swap-js" class="container-fluid">
+                <h2>Value Swap: JavaScript</h2>
+                <div>
+                    <!-- your problem description goes here -->         
+                    Place these lines of code in the correct order to swap values between variables a & b.  
+                    <br>
+                    Study the step-through <a href="https://github.com/elewa-academy/variables-and-types/tree/master/value-swap" target="_blank">right here</a>
+                    <br>
+                    (not all lines of code are part of the solution)
+                    <br>
+                    <br>
+                </div>
+
+                <!-- what you see -->
+                <div id="shuffled-value-swap" class="sortable-code"></div>
+                <div id="sorted-value-swap" class="sortable-code">
+                </div>
+                <div style="clear:both;"></div>
+                <p>
+                    <a href="#" class="btn btn-secondary" id="reshuffle-value-swap">Re-Shuffle</a>
+                    <a href="#" class="btn btn-secondary" id="feedback-value-swap">Get feedback</a>
+                </p>
+
+
+                <!-- configure this section's challenge -->
+                <script>
+                    <!-- define your challenge here -->
+                    config = {};
+                    config.challenge = 
+                        "let a = \'a\'; \n" +
+                        "let b = \'b\'; \n" +
+                        "let holder = undefined; \n" +
+                        "holder = a; \n" +
+                        "a = b; \n" +
+                        "b = holder; \n" +
+                        "// hint: let a, b, holder  #distractor";
+                    config.shuffled_id = "shuffled-value-swap";
+                    config.sorted_id = "sorted-value-swap";
+                    config.reshuffle_id = "reshuffle-value-swap";
+                    config.feedback_id = "feedback-value-swap";
+                    init_section(config);
+                </script>
+                <hr>
+            </div>
+            <div id="hoisting" class="container-fluid">
+                <h2>Hoisting</h2>
+                <div>
+                    <!-- your problem description goes here -->         
+                    Place these lines of code in order so that the behavior comments are correct.  Study the step-through <a href="https://github.com/elewa-academy/variables-and-types/tree/master/hoisting" target="_blank">right here</a>
+                    <br>
+                    <br>
+                </div>
+
+                <!-- what you see -->
+                <div id="shuffled-hoisting" class="sortable-code"></div>
+                <div id="sorted-hoisting" class="sortable-code">
+                </div>
+                <div style="clear:both;"></div>
+                <p>
+                    <a href="#" class="btn btn-secondary" id="reshuffle-hoisting">Re-Shuffle</a>
+                    <a href="#" class="btn btn-secondary" id="feedback-hoisting">Get feedback</a>
+                </p>
+
+                <!-- configure this section's challenge -->
+                <script>
+                    <!-- define your challenge here -->
+                    config = {};
+                    config.challenge = 
+                        "console.log(_let); // -> ReferenceError: _let is not defined \n"+
+                        "console.log(_var); // logs: undefined \n"+
+
+                        "let _let = \"lleett\"; \n"+
+                        "var _var = \"vvaarr\"; \n"+
+
+                        "console.log(_let); // logs: lleett \n"+
+                        "console.log(_var); // logs: vvaarr \n"+
+                        "// hint:  2 logs, 2 assignments, 2 logs.  let before var #distractor \n";
+                    config.shuffled_id = "shuffled-hoisting";
+                    config.sorted_id = "sorted-hoisting";
+                    config.reshuffle_id = "reshuffle-hoisting";
+                    config.feedback_id = "feedback-hoisting";
+                    init_section(config);
+                </script>
+                <hr>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+    <div>
+        <hr>
+        <hr>
+        <a href="http://elewa.education/blog" target="_blank"><img src="https://user-images.githubusercontent.com/18554853/34921062-506450ae-f97d-11e7-875f-6feeb26ad72d.png" width="150" height="60"/></a>
+        <br>
+        <br>
+    </div>
+
+
+</body>
+
+</html>

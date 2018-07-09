@@ -5,6 +5,8 @@ function displayErrors(fb) {
 } 
 
 
+
+
 /* config:
 		challenge: String
 			- The code to study, defined like this:
