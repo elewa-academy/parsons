@@ -178,18 +178,18 @@
                     config.reshuffle_id = "reshuffle-nesting-scopes";
                     config.feedback_id = "feedback-nesting-scopes";
                     config.challenge = 
-                        "let block_0 = [\'b0\']; \n" +
+                        "let vari_0 = [\'b0\']; \n" +
                         "console.log(\'preparing block 1\'); \n" +
                         "{ \n" +
-                        "  let block_1 = []; \n" +
-                        "  block_0.push('\b1\'), block_1.push(\'b1\'); \n" +
+                        "  let vari_1 = []; \n" +
+                        "  vari_0.push('\b1\'), vari_1.push(\'b1\'); \n" +
                         "  console.log('preparing block 2'); \n" +
                         "  { \n" +
-                        "    let block_2 = []; \n" +
-                        "    block_0.push(\'b2\'), block_1.push(\'b2\'), block_2.push(\'b\'); \n" +
-                        "    console.log(\'clearing block 2\'), block_0.pop(), block_1.pop(); \n" +
+                        "    let vari_2 = []; \n" +
+                        "    vari_0.push(\'b2\'), vari_1.push(\'b2\'), vari_2.push(\'b\'); \n" +
+                        "    console.log(\'clearing block 2\'), vari_0.pop(), vari_1.pop(); \n" +
                         "  }; \n" +
-                        "  console.log(\'clearing block 1\'), block_0.pop(); \n" +
+                        "  console.log(\'clearing block 1\'), vari_0.pop(); \n" +
                         "}; \n" +
                         "console.log(\'final state\'); \n";
                     init_section(config);
